@@ -20,7 +20,6 @@ export default class Model {
   }
 
   searchEmployee = (searchTerm, callback) => {
-    console.log('model->searchEmployee', searchTerm);
     if (searchTerm === "") {
       this.fetchEmployeeList(data => {
         callback(data);
