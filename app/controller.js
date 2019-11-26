@@ -7,24 +7,19 @@ export default class Controller {
     this.view.bindSearchEmployee(this.handleSearchEmployee);
 
     // Display initial data
-    this.view.bindOnLoad(this.fetchEmployeeList);
+    this.view.bindOnLoad(this.renderEmployeeList);
   }
 
-  fetchEmployeeList = () => {
+  renderEmployeeList = () => {
     this.model.fetchEmployeeList(employees => {
-
-      const newData = employees.map(emp => {
-        const empStartDate = moment(emp.date, 'M/D/YYYY');
-        emp.daysPassed = `${moment().diff(empStartDate, 'days')} days`;
-        return emp;
-      });
-
-      this.view.displayEmployees(newData);
+      this.view.displayEmployees(employees);
     });
   }
 
-  handleSearchEmployee = id => {
-    this.model.searchEmployee(id);
+  handleSearchEmployee = (searchTerm) => {
+    this.model.searchEmployee(searchTerm, (data) => {
+      this.view.displayEmployees(data);
+    });
   }
 
 };
