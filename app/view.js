@@ -28,9 +28,9 @@ export default class View {
       tr.appendChild(avatar);
       tr.appendChild(this.createElement('td', employee.firstName));
       tr.appendChild(this.createElement('td', employee.lastName));
-      tr.appendChild(this.createElement('td', employee.lastName));
-      tr.appendChild(this.createElement('td', employee.gender));
       tr.appendChild(this.createElement('td', employee.email));
+      tr.appendChild(this.createElement('td', employee.gender));
+      tr.appendChild(this.createElement('td', employee.department));
       tr.appendChild(this.createElement('td', employee.date));
       tr.appendChild(this.createElement('td', employee.daysPassed));
 

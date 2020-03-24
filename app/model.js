@@ -1,6 +1,6 @@
 export default class Model {
   constructor() {
-    this.url = 'http://api.alperg.com/employees';
+    this.url = 'https://alper.dev/employees';
     this.employees = [];
     this.allEmployees = [];
   }
